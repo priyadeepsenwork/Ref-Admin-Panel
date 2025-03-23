@@ -14,7 +14,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    //!danger zone
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+
   },
   "include": ["src"],
   "references": [
