@@ -2,8 +2,9 @@ import { Col, Row } from "antd";
 import {
   DashboardTotalCountCard,
   DealsChart,
+  LatestActivities,
   UpcomingEvents,
-} from "../../components";
+} from "@/components";
 import { useCustom } from "@refinedev/core";
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "../../graphql/queries";
 import { DashboardTotalCountsQuery } from "../../graphql/types";
@@ -67,6 +68,16 @@ export const Home = () => {
           }}
         >
           <DealsChart />
+        </Col>
+      </Row>
+      <Row
+      gutter={[32, 32]}
+      style={{
+        marginTop: '32px'
+      }}
+      >
+        <Col xs={24}>
+          < LatestActivities />
         </Col>
       </Row>
     </div>
