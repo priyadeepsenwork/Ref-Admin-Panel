@@ -12,7 +12,7 @@ import "@refinedev/antd/dist/reset.css";
 
 import { dataProvider, liveProvider } from "./providers/data";
 import { authProvider } from "./providers";
-import { Home, ForgotPassword, Login, Register, CompanyListPage } from "./pages";
+import { Home, ForgotPassword, Login, Register, CompanyList, Create } from "./pages";
 
 import routerBindings, {
   CatchAllNavigate,
@@ -63,8 +63,10 @@ const App = () => {
                   }
                 >
                   <Route index element={<Home />} />
-                  <Route path="/companies" element={<CompanyListPage />} />
-                  
+                  <Route path="/companies">
+                    <Route index element={<CompanyList />} />
+                    <Route path="new" element={<Create />} />
+                  </Route>
                 </Route>
               </Routes>
               <RefineKbar />
