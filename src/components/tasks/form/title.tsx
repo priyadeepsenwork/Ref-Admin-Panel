@@ -99,7 +99,7 @@ export const TitleForm = ({ initialValues, isLoading }: Props) => {
   // set the title of the form to the title of the task
   React.useEffect(() => {
     formProps.form?.setFieldsValue(initialValues);
-  }, [initialValues.title]);
+  }, [formProps.form, initialValues, initialValues.title]);
 
   if (isLoading) {
     return (

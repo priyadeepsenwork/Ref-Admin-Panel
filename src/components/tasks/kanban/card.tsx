@@ -55,7 +55,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
     ]
 
     return dropdownItems
-  }, [])
+  }, [edit, id, mutate])
 
   const dueDateOptions = useMemo(() => {
     if(!dueDate) return null;
