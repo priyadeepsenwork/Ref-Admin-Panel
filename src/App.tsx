@@ -12,7 +12,14 @@ import "@refinedev/antd/dist/reset.css";
 
 import { dataProvider, liveProvider } from "./providers/data";
 import { authProvider } from "./providers";
-import { Home, ForgotPassword, Login, Register, CompanyList, Create } from "./pages";
+import {
+  Home,
+  ForgotPassword,
+  Login,
+  Register,
+  CompanyList,
+  Create,
+} from "./pages";
 
 import routerBindings, {
   CatchAllNavigate,
@@ -24,6 +31,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
 import EditPage from "./pages/Company/edit";
+import List from "./pages/tasks/list";
 
 const App = () => {
   return (
@@ -68,6 +76,9 @@ const App = () => {
                     <Route index element={<CompanyList />} />
                     <Route path="new" element={<Create />} />
                     <Route path="edit/:id" element={<EditPage />} />
+                  </Route>
+                  <Route path="/tasks">
+                    <Route index element={<List />} />
                   </Route>
                 </Route>
               </Routes>
